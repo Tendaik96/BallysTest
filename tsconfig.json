@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Specify the target ECMAScript version
+    "module": "es6", // Specify the module system (e.g., CommonJS)
+    "moduleResolution": "node",
+    "outDir": "./dist", // Specify the output directory for compiled JavaScript files
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true // Enable compatibility with ES modules
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node"
+  },
+  "include": ["./models/octokit.ts", "./routes/getReadme.ts", "./routes/searchById.ts", "./routes/searchName.ts", "./app.ts"], // Specify the files to include for compilation
+  "exclude": ["node_modules"] // Specify files or directories to exclude from compilation
+}
