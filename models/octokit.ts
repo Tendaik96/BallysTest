@@ -18,13 +18,14 @@ export async function searchRepositorys(name : string) {
 
   } catch (error : any) {
     console.error("Error searching repositories:", error.message);
+    return error.message
   }
 }
 //Test function
 //searchRepositorys("CineMate");
 
 
-export async function getRepositoryById(repositoryId : number) {
+export async function getRepositoryById(repositoryId : string) {
   try {
     const response = await octokit.request(
       `https://api.github.com/repositories/${repositoryId}`,
@@ -36,6 +37,7 @@ export async function getRepositoryById(repositoryId : number) {
     return response.data;
   } catch (error : any) {
     console.error("Error searching repositories:", error.message);
+    return error.message
   }
 }
 //Test function
@@ -43,7 +45,7 @@ export async function getRepositoryById(repositoryId : number) {
 
 
 
-export async function getReadme(repositoryId : number) {
+export async function getReadme(repositoryId : string) {
   try {
     const response = await octokit.request(
       `https://api.github.com/repositories/${repositoryId}/readme`,
@@ -55,6 +57,7 @@ export async function getReadme(repositoryId : number) {
     return response.data;
   } catch (error : any) {
     console.error("Error searching repositories:", error.message);
+    return error.message
   }
 }
 //Test function

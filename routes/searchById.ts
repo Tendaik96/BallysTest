@@ -8,11 +8,12 @@ const idRouter = express.Router();
 idRouter.get("/:id", async function (req: Request, res: Response) {
   
   try{ 
-  const id = Number(req.params.id);
-  const results = await getRepositoryById(id);
-  res.status(200).json({ success: true, payload: results });
-  console.log("this is the name", results);
+    const id : string = req.params.id;
+    const results = await getRepositoryById(id);
+    res.status(200).json({ success: true, payload: results });
+    console.log("these are the results", results);
     console.log(id);
+    
   }catch (error: any) {
     
     res.status(500).json({ error: error.message });

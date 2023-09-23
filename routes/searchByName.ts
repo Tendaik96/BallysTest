@@ -11,8 +11,9 @@ Router.get("/:name", async function (req, res) {
     const word : string = req.params.name;
     const results = await searchRepositorys(word);
     res.status(200).json({ success: true, payload: results });
-    // console.log("this is the name", results);
-    // console.log(word);
+    //console.log("these are the results", results);
+    console.log(word);
+    console.log(req)
 
   } catch (error: any) {
     

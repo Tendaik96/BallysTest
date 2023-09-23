@@ -1,6 +1,6 @@
 import express from "express";
 import { Request, Response, NextFunction } from "express";
-import Router from "./routes/searchName";
+import Router from "./routes/searchByName";
 import idRouter from "./routes/searchById";
 import readmeRouter from './routes/getReadme'
 
@@ -11,6 +11,7 @@ app.use(express.json());
 
 const logger = (req : Request, res : Response, next : NextFunction) => {
   console.log(req.method, req.url);
+  
   next();
 }
 app.use(logger)
