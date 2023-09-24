@@ -11,12 +11,12 @@ idRouter.get("/:id", async function (req: Request, res: Response) {
     const id : string = req.params.id;
     const results = await getRepositoryById(id);
     res.status(200).json({ success: true, payload: results });
-    console.log("these are the results", results);
-    console.log(id);
+    //console.log("these are the results", results);
+    //console.log(id);
     
   }catch (error: any) {
     
-    res.status(500).json({ error: error.message });
+    res.status(400).json({ error: error.message });
     
   }
   

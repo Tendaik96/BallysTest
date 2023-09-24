@@ -1,5 +1,5 @@
 import express from "express";
-import {searchRepositorys} from "../models/octokit.js";
+import {searchRepositorys} from "../models/octokit";
 
 const Router = express.Router();
 
@@ -12,12 +12,12 @@ Router.get("/:name", async function (req, res) {
     const results = await searchRepositorys(word);
     res.status(200).json({ success: true, payload: results });
     //console.log("these are the results", results);
-    console.log(word);
-    console.log(req)
+    //console.log(word);
+    
 
   } catch (error: any) {
     
-    res.status(500).json({ error: error.message });
+    res.status(400).json({ error: error.message });
     
   }
 

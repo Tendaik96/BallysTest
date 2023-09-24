@@ -72,21 +72,27 @@ Middleware is a software component or function that sits between the client and 
 
 ## API Reference
 
-| HTTP   | Path                   | Response Body                               | Status code | Description                |
-| :----- | :-------------------   | :-----------------------------------        | :---------- | :----------------------    |
-| GET    | api/repositories/:name    | An array of repositories of a specific name | 200         | Get repositories by name   |
-| GET    | api/repositoryDetails/:id | An object of specific repository objects    | 200         | Get repository by ID       |
-| GET    | api/getreadme/:id         | An object of specific readme objects        | 200         | Get repository readme by ID|
+| HTTP   | Path                   | Response Body                                                             | Status code | Description                |
+| :----- | :-------------------   | :-------------------------------------------------------------------------| :---------- | :----------------------    |
+| GET    | api/repositories/:name    | An array of object(s) of repositories of/containing a specific name    | 200         | Get repositories by name   |
+| GET    | api/repositoryDetails/:id | An object containing the details of a specific repository              | 200         | Get repository by ID       |
+| GET    | api/getreadme/:id         | An object containing the details for a readme of a specific repository | 200         | Get repository readme by ID|
 
 ## Postman endpoints test
     - www.localhost:3000/api/repositories/:name
     - www.localhost:3000/api/repositoryDetails/:id
     - www.localhost:3000/api/getreadme/:id
 
+## Testing
+1. install 
+
 ## Resources used:
 - https://docs.github.com/en/rest?apiVersion=2022-11-28
 - https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28
-
+- https://jestjs.io/docs/ecmascript-modules
+- https://jestjs.io/docs/configuration
+- https://jestjs.io/docs/getting-started
+- https://stackoverflow.com/questions/66997288/jest-tests-leaking-due-to-improper-teardown 
 
 
 ## Author

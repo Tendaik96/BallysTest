@@ -11,6 +11,8 @@
     "esm": true,
     "experimentalSpecifierResolution": "node"
   },
+    "allowImportingTsExtensions": true,
+    "moduleResolution": "bundler",
   "include": ["./models/octokit.ts", "./routes/getReadme.ts", "./routes/searchById.ts", "routes/searchByName.ts", "./app.ts"], // Specify the files to include for compilation
   "exclude": ["node_modules"] // Specify files or directories to exclude from compilation
 }

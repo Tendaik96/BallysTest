@@ -1,16 +1,16 @@
 import express from "express";
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, Application } from "express";
 import Router from "./routes/searchByName";
 import idRouter from "./routes/searchById";
 import readmeRouter from './routes/getReadme'
 
-const app = express(); 
+const app : Application= express(); 
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
 const logger = (req : Request, res : Response, next : NextFunction) => {
-  console.log(req.method, req.url);
+  //console.log(req.method, req.url);
   
   next();
 }
@@ -23,3 +23,5 @@ app.use("/api/getreadme", readmeRouter);
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
+export { app as default }
