@@ -4,7 +4,7 @@ import request from "supertest";
 
 jest.useRealTimers();
 
-/* test("Get /repositories/:name request", async () => {
+test("Get /repositories/:name request", async () => {
 
   const searchName = 'Dictionary';
   const response = await request(app).get(`/api/repositories/${searchName}`);
@@ -27,9 +27,7 @@ jest.useRealTimers();
   
 });
 
-
-//this test SHOULD FAIL!
-test("Get /repositories/:name, response to invalid search with a 400 status for an error", async () => {
+test("Get /repositories/:name, response to invalid search", async () => {
   const invalidSearchName = 'ir8ygep98%';
   const response = await request(app).get(`/api/repositories/${invalidSearchName}`);
 
@@ -162,7 +160,7 @@ test("Get /repositoryDetails/:id request", async () => {
  
 });
 
-test("Get /repositoryDetails/:id, response to invalid search with a 400 status for an error", async () => {
+test("Get /repositoryDetails/:id, response to invalid search", async () => {
 
   const id = 'fodn%3231';
   const response = await request(app).get(`/api/repositoryDetails/${id}`);
@@ -171,7 +169,7 @@ test("Get /repositoryDetails/:id, response to invalid search with a 400 status f
   // check the contents of object and assert if it is as expected
     let repo = response.body.payload;
     expect(repo).toEqual("Not Found") 
-}); */
+});
 
 
 test("Get /getreadme/:id request", async () => {
@@ -285,26 +283,28 @@ test("Get /getreadme/:id request", async () => {
  
 });
 
-test("Get /getreadme/:id, response to invalid search with a 400 status for an error", async () => {
+test("Get /getreadme/:id, response to invalid search", async () => {
 
   const id = 'fodn%3231';
-  const response = await request(app).get(`/getreadme/${id}`);
+  const response = await request(app).get(`/api/getreadme/${id}`);
   //console.log(response.body);
   
   // check the contents of object and assert if it is as expected
-    let repo = response.body.payload;
-    expect(repo).toEqual("Not Found") 
+    let readme = response.body.payload;
+    expect(readme).toEqual("Not Found") 
 }); 
 
 
- /* PASS  testing/searchByNameRoute.test.ts
-  √ Get /repositories/:name request (512 ms)
-  √ Get /repositories/:name, response to invalid search with a 400 status for an error (21 ms)                                                                                                            
-  √ Get /repositoryDetails/:id request (220 ms)                                                                                                                                                           
-  √ Get /repositoryDetails/:id, response to invalid search with a 400 status for an error (249 ms)                                                                                                        
-                                                                                                                                                                                                          
-Test Suites: 1 passed, 1 total                                                                                                                                                                            
-Tests:       4 passed, 4 total                                                                                                                                                                            
+/*    PASS  testing/routes.test.ts
+  √ Get /repositories/:name request (1369 ms)
+  √ Get /repositories/:name, response to invalid search (19 ms)                                                                                                            
+  √ Get /repositoryDetails/:id request (382 ms)                                                                                                                                                           
+  √ Get /repositoryDetails/:id, response to invalid search (303 ms)
+  √ Get /getreadme/:id request (386 ms)
+  √ Get /getreadme/:id, response to invalid search (333 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       6 passed, 6 total
 Snapshots:   0 total
-Time:        2.49 s
+Time:        4.289 s
 Ran all test suites. */

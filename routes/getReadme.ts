@@ -4,7 +4,7 @@ import { getReadme } from "../models/octokit";
 
 const readmeRouter = express.Router();
 
-// route handler for a GET request for readme using the id of the repositiory
+// route handler - GET request for readme
 readmeRouter.get("/:id", async function (req: Request, res: Response) {
   try {
     
