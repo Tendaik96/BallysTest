@@ -16,10 +16,10 @@ The tsconfig.json file configures how TypeScript code is compiled into JavaScrip
 ## Instructions
 
 ### 🎫 Ticket 1 - Starter files
-1. Select a location on your computer to place your project and initialize it using `npm init`. Check the Node version on your computer.
+1. Select a location on your computer to place your project and initialize it using `npm init -y`. Check the Node version on your computer.
 2. `Install Octokit` according to the node version available. See link below: 
     -   https://github.com/octokit/octokit.js/#readme
-3. Create a `personal access token`. This project uses a `Fine-grained personal access token` as it offers several security advantages over classic personal access tokens. The personal access token is used for authenticating requests to the GitHub API. (see link below on how the token was created)
+3. Create a `personal access token`. This project uses a `Fine-grained personal access token` as it offers several security advantages over classic personal access tokens. The personal access token is used for authenticating requests to the GitHub API. (see link below on how the token was created).
     -   https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#fine-grained-personal-access-tokens
 
 4. Install `dotenv` package to store token, and then Install all the other required packages listed below. In the script section, be sure to add a `dev` entry, This will enable you to start the express server using `nodemon` by running `npm run dev` in the terminal. In your `.gitignore` file add `node_modules` and `.env` as you don't want all of those files being pushed up to GitHub.
@@ -39,7 +39,7 @@ The tsconfig.json file configures how TypeScript code is compiled into JavaScrip
         - Request and return data using octokit function
         - Console.log's and return any error if data failed to be retrieved.
 
-7. following a similar layout, create functions which cater to 'Search Respository by ID' and 'Search for readme by Respository ID', using the links below
+7. following a similar layout, create functions which cater to 'Search Respository by ID' and 'Search for readme by Respository ID', using the links below:
     - https://api.github.com/repositories/{Id}
     - https://api.github.com/repositories/{Id}/readme
 8. Test each function to ensure that data is being passed through.
