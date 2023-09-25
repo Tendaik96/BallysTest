@@ -4,10 +4,8 @@ import Router from "./routes/searchByName";
 import idRouter from "./routes/searchById";
 import readmeRouter from './routes/getReadme'
 
-const app : Application= express(); 
+const app : Application = express(); 
 const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
 
 const logger = (req : Request, res : Response, next : NextFunction) => {
   //console.log(req.method, req.url);
