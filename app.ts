@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 
 const logger = (req : Request, res : Response, next : NextFunction) => {
   //console.log(req.method, req.url);
-  
   next();
 }
 app.use(logger)
